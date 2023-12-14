@@ -1,0 +1,24 @@
+tiny	2	0	intermediary	named
+c	net/minecraft/client/Minecraft	net/minecraft/client/Minecraft
+	f	Lrv;	cl	renderEngine
+	f	Lnv;	cm	fontRenderer
+	f	LmK;	cg	thePlayer
+	f	I	cd	displayHeight
+	f	I	cc	displayWidth
+c	aB	net/minecraft/src/GuiIngame
+	m	(IIIF)V	a	renderInventorySlot
+	m	(FZII)V	a	renderGameOverlay
+	f	Lnet/minecraft/client/Minecraft;	dR	mc
+c	pc	net/minecraft/src/ItemStack
+c	rE	net/minecraft/src/RenderItem
+	m	(Lnv;Lrv;Lpc;II)V	a	renderItemIntoGUI
+	m	(Lnv;Lrv;Lpc;II)V	b	renderItemOverlayIntoGUI
+c	au	net/minecraft/src/Gui
+c	mA	net/minecraft/src/EntityLiving
+c	nZ	net/minecraft/src/InventoryPlayer
+	f	[Lpc;	ajU	armorInventory
+	f	[Lpc;	ajT	mainInventory
+c	rn	net/minecraft/src/Render
+c	mJ	net/minecraft/src/EntityPlayer
+	f	LnZ;	afy	inventory
+c	mK	net/minecraft/src/EntityPlayerSP
