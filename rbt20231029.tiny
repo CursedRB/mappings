@@ -1,24 +1,116 @@
-tiny	2	0	intermediary	named
-c	net/minecraft/client/Minecraft	net/minecraft/client/Minecraft
-	f	Lrv;	cl	renderEngine
-	f	Lnv;	cm	fontRenderer
-	f	LmK;	cg	thePlayer
-	f	I	cd	displayHeight
-	f	I	cc	displayWidth
-c	aB	net/minecraft/src/GuiIngame
-	m	(IIIF)V	a	renderInventorySlot
-	m	(FZII)V	a	renderGameOverlay
-	f	Lnet/minecraft/client/Minecraft;	dR	mc
-c	pc	net/minecraft/src/ItemStack
-c	rE	net/minecraft/src/RenderItem
-	m	(Lnv;Lrv;Lpc;II)V	a	renderItemIntoGUI
-	m	(Lnv;Lrv;Lpc;II)V	b	renderItemOverlayIntoGUI
-c	au	net/minecraft/src/Gui
-c	mA	net/minecraft/src/EntityLiving
-c	nZ	net/minecraft/src/InventoryPlayer
-	f	[Lpc;	ajU	armorInventory
-	f	[Lpc;	ajT	mainInventory
-c	rn	net/minecraft/src/Render
-c	mJ	net/minecraft/src/EntityPlayer
-	f	LnZ;	afy	inventory
-c	mK	net/minecraft/src/EntityPlayerSP
+v1	intermediary	named
+CLASS	V	net/minecraft/src/NBTBase
+CLASS	Y	net/minecraft/src/NBTTagCompound
+CLASS	aB	net/minecraft/src/GuiIngame
+FIELD	aB	Lnet/minecraft/client/Minecraft;	dR	mc
+METHOD	aB	(FZII)V	a	renderGameOverlay
+METHOD	aB	(IIIF)V	a	renderInventorySlot
+CLASS	aF	net/minecraft/src/GuiScreen
+CLASS	au	net/minecraft/src/Gui
+METHOD	au	(Lnv;Ljava/lang/String;III)V	a	drawCenteredString
+METHOD	au	(Lnv;Ljava/lang/String;III)V	b	drawString
+CLASS	bb	net/minecraft/src/GuiConnecting
+CLASS	bd	net/minecraft/src/GuiDownloadTerrain
+CLASS	hR	net/minecraft/src/Packet
+FIELD	hR	Ljava/util/Map;	Og	packetIdToClassMap
+FIELD	hR	Ljava/util/Map;	Oh	packetClassToIdMap
+METHOD	hR	(IZZLjava/lang/Class;)V	a	addIdClassMapping
+METHOD	hR	(Ljava/io/DataInputStream;)V	a	readPacketData
+METHOD	hR	(Ljava/io/DataOutputStream;)V	a	writePacketData
+METHOD	hR	(Lqy;)V	a	processPacket
+METHOD	hR	(I)LhR;	aX	getNewPacket
+CLASS	hS	net/minecraft/src/Packet0KeepAlive
+METHOD	hS	()I	kB	getPacketSize
+CLASS	hU	net/minecraft/src/Packet101CloseWindow
+FIELD	hU	I	Oi	windowId
+METHOD	hU	()I	kB	getPacketSize
+CLASS	ic	net/minecraft/src/Packet10Flying
+FIELD	ic	F	Hz	pitch
+FIELD	ic	D	OA	xPosition
+FIELD	ic	D	OB	yPosition
+FIELD	ic	D	OC	zPosition
+FIELD	ic	D	OD	stance
+FIELD	ic	F	OE	yaw
+FIELD	ic	Z	OF	onGround
+FIELD	ic	Z	OG	moving
+FIELD	ic	Z	OH	rotating
+METHOD	ic	()I	kB	getPacketSize
+CLASS	id	net/minecraft/src/Packet11PlayerPosition
+CLASS	ie	net/minecraft/src/Packet12PlayerLook
+CLASS	ih	net/minecraft/src/Packet13PlayerLookMove
+METHOD	jp	(DDDDDD)Ljp;	c	setBounds
+CLASS	lY	net/minecraft/src/Entity
+FIELD	lY	F	OS	yOffset
+FIELD	lY	Ljp;	aaG	boundingBox
+FIELD	lY	LlY;	aaJ	riddenByEntity
+FIELD	lY	LlY;	aaK	ridingEntity
+FIELD	lY	D	aaO	posX
+FIELD	lY	D	aaP	posY
+FIELD	lY	D	aaQ	posZ
+FIELD	lY	D	aaR	motionX
+FIELD	lY	D	aaS	motionY
+FIELD	lY	D	aaT	motionZ
+FIELD	lY	F	aaU	rotationYaw
+FIELD	lY	F	abf	width
+FIELD	lY	F	abg	height
+FIELD	lY	Z	abo	noClip
+METHOD	lY	(LY;)V	c	writeToNBT
+METHOD	lY	(LY;)V	d	readFromNBT
+METHOD	lY	(DDD)V	g	setPosition
+METHOD	lY	(LlY;)V	m	mountEntity
+METHOD	lY	()V	mz	setEntityDead
+CLASS	lr	net/minecraft/src/ChunkCache
+CLASS	mA	net/minecraft/src/EntityLiving
+FIELD	mA	F	aeA	moveStrafing
+FIELD	mA	F	aeB	moveForward
+CLASS	mE	net/minecraft/src/EntityOtherPlayerMP
+CLASS	mJ	net/minecraft/src/EntityPlayer
+FIELD	mJ	Ljava/lang/String;	Pk	username
+FIELD	mJ	LnZ;	afy	inventory
+CLASS	mK	net/minecraft/src/EntityPlayerSP
+CLASS	mO	net/minecraft/src/EntityRenderer
+METHOD	mO	()V	or	updateRenderer
+CLASS	nC	net/minecraft/src/IBlockAccess
+METHOD	nC	(IIII)F	j	getBrightness
+METHOD	nC	(III)F	u	getLightBrightness
+CLASS	nZ	net/minecraft/src/InventoryPlayer
+FIELD	nZ	[Lpc;	ajT	mainInventory
+FIELD	nZ	[Lpc;	ajU	armorInventory
+CLASS	net/minecraft/client/Minecraft	net/minecraft/client/Minecraft
+FIELD	net/minecraft/client/Minecraft	I	cc	displayWidth
+FIELD	net/minecraft/client/Minecraft	I	cd	displayHeight
+FIELD	net/minecraft/client/Minecraft	Ltw;	ce	theWorld
+FIELD	net/minecraft/client/Minecraft	LmK;	cg	thePlayer
+FIELD	net/minecraft/client/Minecraft	Lrv;	cl	renderEngine
+FIELD	net/minecraft/client/Minecraft	Lnv;	cm	fontRenderer
+FIELD	net/minecraft/client/Minecraft	LaF;	cn	currentScreen
+FIELD	net/minecraft/client/Minecraft	LmO;	cp	entityRenderer
+FIELD	net/minecraft/client/Minecraft	LaB;	cr	ingameGUI
+METHOD	net/minecraft/client/Minecraft	()Lqv;	aG	getSendQueue
+CLASS	nv	net/minecraft/src/FontRenderer
+METHOD	nv	(Ljava/lang/String;)I	bo	getStringWidth
+CLASS	pE	net/minecraft/src/MathHelper
+FIELD	pE	[F	aqh	SIN_TABLE
+METHOD	pE	(F)F	aa	sin
+METHOD	pE	(F)F	ab	cos
+METHOD	pE	(F)F	ac	sqrt_float
+METHOD	pE	(F)I	ad	floor_float
+METHOD	pE	(F)F	ae	abs
+METHOD	pE	(II)I	ap	bucketInt
+METHOD	pE	(Ljava/lang/String;)Z	bD	stringNullOrLengthZero
+METHOD	pE	(D)F	c	sqrt_double
+METHOD	pE	(D)I	d	floor_double
+METHOD	pE	(DD)D	d	abs_max
+CLASS	pc	net/minecraft/src/ItemStack
+CLASS	qv	net/minecraft/src/NetClientHandler
+METHOD	qv	(LhR;)V	b	addToSendQueue
+CLASS	qy	net/minecraft/src/NetHandler
+CLASS	qz	net/minecraft/src/NetworkManager
+CLASS	rE	net/minecraft/src/RenderItem
+METHOD	rE	(Lnv;Lrv;Lpc;II)V	a	renderItemIntoGUI
+METHOD	rE	(Lnv;Lrv;Lpc;II)V	b	renderItemOverlayIntoGUI
+CLASS	rn	net/minecraft/src/Render
+CLASS	tw	net/minecraft/src/World
+METHOD	tw	(LlY;)V	F	setEntityDead
+METHOD	tw	(LlY;)V	H	joinEntityInSurroundings
+METHOD	tw	(IIIIII)V	l	markBlocksDirty
