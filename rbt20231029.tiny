@@ -1,24 +1,198 @@
 tiny	2	0	intermediary	named
-c	net/minecraft/client/Minecraft	net/minecraft/client/Minecraft
-	f	Lrv;	cl	renderEngine
-	f	Lnv;	cm	fontRenderer
-	f	LmK;	cg	thePlayer
-	f	I	cd	displayHeight
-	f	I	cc	displayWidth
+c	nn	nn
+	m	()Lnn;	oN	getOS
+c	tt	net/minecraft/src/Timer
 c	aB	net/minecraft/src/GuiIngame
 	m	(IIIF)V	a	renderInventorySlot
 	m	(FZII)V	a	renderGameOverlay
 	f	Lnet/minecraft/client/Minecraft;	dR	mc
-c	pc	net/minecraft/src/ItemStack
+c	tw	net/minecraft/src/World
+	m	(Ltw;Luj;)V	<init>	<init>
+		p	1		world
+	m	()Llt;	tE	getSpawnPoint
+	f	Ljava/util/List;	aEI	playerEntities
+c	rv	net/minecraft/src/RenderEngine
+c	aF	net/minecraft/src/GuiScreen
+c	ty	net/minecraft/src/WorldChunkManager
+c	net/minecraft/mods/inventorytweaks/mod_InvTweaks	net/minecraft/mods/inventorytweaks/mod_InvTweaks
+	f	Ljava/util/logging/Logger;	Fn	LOGGER
+c	lt	net/minecraft/src/ChunkCoordinates
+	f	I	NH	y
+	f	I	Iq	z
+	f	I	Ip	x
+c	jr	net/minecraft/src/BaseMod
+	m	()V	hT	ModsLoaded
+	m	(Ltw;Ljava/util/Random;II)V	a	a
+		p	2		random
+		p	1		world
+	m	(Ltw;DDDIILpc;)Z	a	DispenseEntity
+		p	1		world
+	m	(Ljava/util/Map;)V	d	AddRenderer
+		p	1		map
+	m	(Lnet/minecraft/client/Minecraft;)V	h	h
+		p	1		mc
+	m	(Ltw;Ljava/util/Random;II)V	b	b
+		p	1		world
+		p	2		random
+	m	(Lnet/minecraft/client/Minecraft;LaF;)Z	a	OnTickInGUI
+		p	2		screen
+		p	1		mc
+	m	()Ljava/lang/String;	eQ	Version
+	m	(Lnet/minecraft/client/Minecraft;)Z	d	OnTickInGame
+		p	1		mc
+	m	(Lcz;LnC;IIILjB;I)Z	a	RenderWorldBlock
+		p	6		block
+		p	2		iblockaccess
+		p	1		renderblocks
+	m	(Lcz;LjB;II)V	a	RenderInvBlock
+		p	2		block
+		p	1		renderblocks
+	m	(Lpi;)V	a	KeyboardEvent
+		p	1		keybinding
+c	nv	net/minecraft/src/FontRenderer
+c	kS	net/minecraft/src/BlockSapling
+c	js	net/minecraft/src/BaseModMp
+c	pz	net/minecraft/src/Material
+	m	()Z	qt	getCanBlockGrass
+	f	Lpz;	apA	rock
+c	net/minecraft/mods/reiminimap/mod_ReiMinimap	net/minecraft/mods/reiminimap/mod_ReiMinimap
+c	net/minecraft/mods/panoramakit/mod_PanoramaKitS	net/minecraft/mods/panoramakit/mod_PanoramaKitS
+	f	Lpi;	HG	panoramaKeybinding
+c	net/minecraft/client/a	net/minecraft/client/RubetaWatchFrogThread
 c	rE	net/minecraft/src/RenderItem
 	m	(Lnv;Lrv;Lpc;II)V	a	renderItemIntoGUI
 	m	(Lnv;Lrv;Lpc;II)V	b	renderItemOverlayIntoGUI
-c	au	net/minecraft/src/Gui
-c	mA	net/minecraft/src/EntityLiving
+c	nC	net/minecraft/src/IBlockAccess
+	m	(III)I	s	s
+		p	1		x
+		p	2		y
+		p	3		z
+	m	()Lty;	iO	getWorldChunkManager
+	m	(III)Lpz;	w	getBlockMaterial
+		p	2		y
+		p	3		z
+		p	1		x
+	m	(III)I	v	v
+		p	1		x
+		p	2		y
+		p	3		z
+	m	(III)Z	x	x
+		p	1		x
+		p	2		y
+		p	3		z
+	m	(III)Z	y	y
+		p	1		x
+		p	2		y
+		p	3		z
+	m	(III)F	u	u
+		p	1		x
+		p	2		y
+		p	3		z
+	m	(III)Lte;	t	getBlockTileEntity
+		p	3		z
+		p	2		y
+		p	1		x
+c	net/minecraft/mods/mod_Hax	net/minecraft/mods/mod_Hax
+	m	()Ljava/lang/String;	fZ	getName
+	f	Lpi;	Fo	autoWalkKeybinding
+	f	Z	Fp	autoWalk
+c	net/minecraft/mods/hmi/mod_HowManyItems	net/minecraft/mods/hmi/mod_HowManyItems
+c	jB	net/minecraft/src/Block
+	f	[Z	SW	isBlockContainer
+	f	LsE;	SQ	soundClothFootstep
+	f	[Z	SY	canBlockGrass
+	m	(ILpz;)V	<init>	<init>
+		p	1		id
+		p	2		material
+	m	(F)LjB;	x	setHardness
+	f	LjB;	Tc	stone
+	m	(LsE;)LjB;	a	setStepSound
+	f	Lpz;	Vs	blockMaterial
+	f	LjB;	Te	dirt
+	f	LsE;	SK	soundWoodFootstep
+	f	LjB;	Tg	planks
+	f	LsE;	SM	soundGrassFootstep
+	f	LjB;	Ti	bedrock
+	m	()LjB;	ls	disableNeighborNotifyOnMetadataChange
+	m	()LjB;	lu	setBlockUnbreakable
+	m	(IILpz;)V	<init>	<init>
+		p	3		material
+		p	1		id
+	m	()I	dX	tickRate
+	f	LsE;	SP	soundGlassFootstep
+	f	[Z	SV	opaqueCubeLookup
+	f	LsE;	SR	soundSandFootstep
+	m	()I	dO	getRenderType
+	m	(F)LjB;	w	setResistance
+	m	(Ljava/lang/String;)LjB;	bj	setBlockName
+	f	LjB;	Tf	cobblestone
+	f	LsE;	SL	soundGravelFootstep
+	f	LjB;	Th	sapling
+	f	LsE;	SN	soundStoneFootstep
+	f	Lki;	Td	grass
+	f	[LjB;	ST	blocksList
+	f	[I	SX	lightOpacity
+	m	()Z	dP	isOpaqueCube
+	m	(LnC;III)V	a	setBlockBoundsBasedOnState
+c	pH	net/minecraft/src/ModLoader
+	m	(Ljr;ZZ)V	a	SetInGameHook
+	m	(Ljr;Lpi;Z)V	a	RegisterKey
+	m	(Lcz;LnC;IIILjB;I)Z	a	RenderWorldBlock
+c	ga	net/minecraft/src/mod_Rubeta
+c	ki	net/minecraft/src/BlockGrass
+c	jT	net/minecraft/src/BlockDirt
 c	nZ	net/minecraft/src/InventoryPlayer
 	f	[Lpc;	ajU	armorInventory
 	f	[Lpc;	ajT	mainInventory
+c	lY	lY
+	m	(Ltw;)V	<init>	<init>
+		p	1		world
+	m	(DDDFF)V	c	setLocationAndAngles
+c	td	net/minecraft/src/ThreadSleepForever
+c	net/minecraft/client/Minecraft	net/minecraft/client/Minecraft
+	f	Lrv;	cl	renderEngine
+	f	Ljava/lang/String;	bT	rubetaModdedBuild
+	f	Lnet/minecraft/client/Minecraft;	bW	theMinecraft
+	f	[B	bV	unusedBuffer
+	f	LmK;	cg	thePlayer
+	f	Lnv;	cm	fontRenderer
+	f	Ltw;	ce	theWorld
+	m	([Ljava/lang/String;)V	main	main
+		p	0		args
+	f	Ltt;	bX	timer
+	m	(Ljava/lang/String;)Ljava/io/File;	H	getAppDir
+		p	0		s
+	f	I	cd	displayHeight
+	f	I	cc	displayWidth
+c	te	net/minecraft/src/TileEntity
+	f	Ljava/util/Map;	aCP	nameToClassMap
+	f	Ljava/util/Map;	aCQ	classToNameMap
+	m	(Ljava/lang/Class;Ljava/lang/String;)V	c	c
+		p	0	clazz	clazz
+		p	1	string	id
+c	sE	net/minecraft/src/StepSound
+c	pc	net/minecraft/src/ItemStack
+c	mA	net/minecraft/src/EntityLiving
+c	au	net/minecraft/src/Gui
+c	sG	net/minecraft/src/StepSoundSand
+c	sH	net/minecraft/src/StepSoundStone
+c	lb	net/minecraft/src/BlockStone
+c	cz	net/minecraft/src/RenderBlocks
+	m	(LnC;)V	<init>	<init>
+		p	1		blockAccess
+	m	(LjB;IIII)V	a	a
+		p	5		renderType
+	f	LnC;	kB	blockAccess
+	m	(LjB;III)Z	p	renderStandardBlock
+	m	(LjB;III)Z	b	renderBlockByRenderType
+		p	3		y
+		p	4		z
+		p	1		block
+		p	2		x
+c	pi	net/minecraft/src/KeyBinding
 c	rn	net/minecraft/src/Render
 c	mJ	net/minecraft/src/EntityPlayer
+	m	(Ljava/lang/String;)V	K	addChatMessage
+		p	1		message
 	f	LnZ;	afy	inventory
 c	mK	net/minecraft/src/EntityPlayerSP
